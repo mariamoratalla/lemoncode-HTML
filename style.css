@@ -5,6 +5,12 @@
   --secondary: #212429;
 }
 
+/*estaría bien poner clases containers*/
+/* poner la navbar como position: fixed. Si se pone ahora mismo, lo que hay en main se mueve para arriba
+y ocupa el espacio de la navbar, hay que hacer que el espacio de main empiece debajo de la navbar. */
+
+/* Para dividir en columnas todo el espacio: usar grid. grid-template-columns: repeat(3, 1fr) */
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--primary);
@@ -12,28 +18,63 @@ body {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 1rem;
   border-bottom: var(--secondary) 1px solid;
-}
-
-.list {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-}
-
-.list li {
+  background-color: var(--primary);
   padding: 8px;
 }
 
-.list button {
-    background: none;
-    border: none;
+.menu-icon {
+  margin-left: 5%;
+  margin-right: auto;
 }
 
-.other-icons img {
-  margin-right: 50px;
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding-left: 0%;
+  justify-content: space-between;
+}
+
+.list button {
+  background: none;
+  border: none;
+}
+
+.other-icons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+#img2 {
+  margin-left: 3rem;
+}
+
+#img3 {
+  margin-left: 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 80px;
+  padding: 30px;
 }
