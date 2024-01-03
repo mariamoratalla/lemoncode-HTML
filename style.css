@@ -5,16 +5,11 @@
   --secondary: #212429;
 }
 
-/*estaría bien poner clases containers*/
-/* poner la navbar como position: fixed. Si se pone ahora mismo, lo que hay en main se mueve para arriba
-y ocupa el espacio de la navbar, hay que hacer que el espacio de main empiece debajo de la navbar. */
-
-/* Para dividir en columnas todo el espacio: usar grid. grid-template-columns: repeat(3, 1fr) */
-
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--primary);
   color: var(--secondary);
+  margin: 0;
 }
 
 nav {
@@ -29,6 +24,7 @@ nav {
   border-bottom: var(--secondary) 1px solid;
   background-color: var(--primary);
   padding: 8px;
+  z-index: 100;
 }
 
 .menu-icon {
@@ -53,11 +49,6 @@ a:hover {
   justify-content: space-between;
 }
 
-.list button {
-  background: none;
-  border: none;
-}
-
 .other-icons-container {
   display: flex;
   justify-content: space-between;
@@ -65,10 +56,7 @@ a:hover {
   margin-right: 5%;
 }
 
-#img2 {
-  margin-left: 3rem;
-}
-
+#img2,
 #img3 {
   margin-left: 3rem;
 }
@@ -81,21 +69,16 @@ h1 {
 
 .productos-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 16em;
-  margin-right: 16em;
   gap: 20px;
 }
 
 section img {
   border-radius: 10px;
-  max-width: 100;
-  max-height: 500px;
+  max-width: 100%;
   height: auto;
 }
 
 .producto {
-  /* border: #212429 solid; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,18 +86,44 @@ section img {
 
 .info {
   width: 100%;
+  font-size: 14px;
   box-sizing: border-box;
   padding: 0 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  /* margin-top: 1rem;
-  margin-bottom: 1rem;
-  justify-content: space-between; */
-  
+  justify-content: space-around;
 }
 
 .precio {
   font-weight: bold;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 920px) {
+  .list {
+    display: none;
+  }
+
+  .other-icons-container {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    margin-left: 50%;
+    padding: 16px;
+  }
+
+  .productos-container {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 921px) {
+  .productos-container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 16em;
+    margin-right: 16em;
+  }
 }
