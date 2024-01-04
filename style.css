@@ -70,6 +70,7 @@ h1 {
 .productos-container {
   display: grid;
   gap: 20px;
+  margin-bottom: 80px;
 }
 
 section img {
@@ -98,6 +99,35 @@ section img {
   font-weight: bold;
   margin-top: 0.5rem;
 }
+
+.footer-container {
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.item {
+  display: flex;
+  gap: 10px;
+}
+
+.img {
+  background-color: var(--primary);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+/* .item img {
+  background-color: var(--primary);
+  border-radius: 50px;
+  overflow: hidden;
+} */
 
 @media (max-width: 920px) {
   .list {
