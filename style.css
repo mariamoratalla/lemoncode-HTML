@@ -139,6 +139,16 @@ footer {
     grid-template-columns: repeat(1, 1fr);
     padding: 0 16px;
   }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .item {
+    border-bottom: var(--primary) 1px solid;
+  }
 }
 
 @media (min-width: 921px) {
